@@ -1,14 +1,14 @@
 body {
-  background-color: $gray;
+  background-color: $plain-black;
 }
 
-article {
-  @include make-row();
-  section {
-    @include make-lg-column(4);
-    @include make-md-column(4);
-    @include make-sm-column(4);
-    @include make-xs-column(4);
-    border: 1px solid #000;
-  }
-}
+// article {
+//   @include make-row();
+//   section {
+//     @include make-lg-column(4);
+//     @include make-md-column(4);
+//     @include make-sm-column(4);
+//     @include make-xs-column(4);
+//     border: 1px solid #000;
+//   }
+// }
