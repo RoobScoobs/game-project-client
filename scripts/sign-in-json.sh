@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl "http://localhost:3000/sign-in" \
+curl "http://tic-tac-toe.wdibos.com/sign-in" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \

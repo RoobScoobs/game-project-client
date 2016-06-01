@@ -36,9 +36,19 @@ const changePassword = function (data) {
     url: app.host + '/change-password/' + app.user.id,
     method: 'PATCH',
     headers: {
-        Authorization: 'Token token=' + app.user.token,
+      Authorization: 'Token token=' + app.user.token,
     },
     data
+  });
+};
+
+const newGame = function () {
+  return $.ajax ({
+    url: app.host + '/games',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
   });
 };
 
@@ -47,4 +57,5 @@ module.exports = {
   signIn,
   signOut,
   changePassword,
+  newGame,
 };
