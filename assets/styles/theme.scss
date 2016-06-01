@@ -1,14 +1,46 @@
+// @grid-columns: 12;
+// @grid-gutter-width: 30px;
+// @grid-float-breakpoint: 768px;
+
 body {
-  background-color: $plain-black;
+  background-color: $gray;
+}
+div.wrapper {
+  max-width: $max-width;
+  margin: 0 $horizontal-margin;
+}
+div.clearfix:after {
+   visibility: hidden;
+   display: block;
+   font-size: 0;
+   content: " ";
+   clear: both;
+   height: 0;
+}
+div.content-main {
+  @include make-lg-column(9);
+  @include make-md-column(9);
+  @include make-sm-column(9);
+  @include make-xs-column(9);
+}
+div.row {
+  @include make-row();
+  div.box {
+    @include make-lg-column(3);
+    @include make-md-column(3);
+    @include make-sm-column(3);
+    @include make-xs-column(3);
+    border: 1px solid #000;
+    height: 16.666vw;
+  }
+}
+div.content-secondary {
+  @include make-lg-column(3);
+  @include make-md-column(3);
+  @include make-sm-column(3);
+  @include make-xs-column(3);
 }
 
-// article {
-//   @include make-row();
-//   section {
-//     @include make-lg-column(4);
-//     @include make-md-column(4);
-//     @include make-sm-column(4);
-//     @include make-xs-column(4);
-//     border: 1px solid #000;
-//   }
-// }
+h1 {
+  font-size: $font-size;
+}

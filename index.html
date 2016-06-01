@@ -6,59 +6,79 @@
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
-      <h1>ooTICxxTACxxTOEoo</h1>
-      <div class="container">
-        <article>
-          <section>container 1</section>
-          <section>container 2</section>
-          <section>container 3</section>
-        </article>
-        <article>
-          <section>container 4</section>
-          <section>container 5</section>
-          <section>container 6</section>
-        </article>
-        <article>
-          <section>container 7</section>
-          <section>container 8</section>
-          <section>container 9</section>
-        </article>
-      </div>
+    <body>
+      <div class="wrapper clearfix">
+        <div class="content-main">
+          <div class="row">
+            <div class="box 1"></div>
+            <div class="box 2"></div>
+            <div class="box 3"></div>
+          </div>
+          <div class="row">
+            <div class="box 4"></div>
+            <div class="box 5"></div>
+            <div class="box 6"></div>
+          </div>
+          <div class="row">
+            <div class="box 7"></div>
+            <div class="box 8"></div>
+            <div class="box 9"></div>
+          </div>
+        </div>
+        <div class="content-secondary">
+          <h1>ooTICxxTACxxTOEoo</h1>
+          <form id="sign-up">
+            <fieldset>
+              <legend>Register</legend>
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              <input type="submit" name="submit" value="Register">
+            </fieldset>
+          </form>
 
-      <form id="sign-up">
-        <fieldset>
-          <legend>Sign up!</legend>
-          <input type="text" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          <input type="submit" name="submit" value="Sign up!">
-        </fieldset>
-      </form>
+          <form id="sign-up">
+            <fieldset>
+              <legend>Sign Up</legend>
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              <input type="submit" name="submit" value="Sign Up">
+            </fieldset>
+          </form>
 
-        <form id="sign-in">
+          <form id="sign-in">
+            <fieldset>
+              <legend>Sign In</legend>
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="submit" name="submit" value="Sign In">
+            </fieldset>
+        </form>
+
+        <form id="sign-out">
           <fieldset>
-            <legend>Sign in!</legend>
-            <input type="text" name="credentials[email]" placeholder="Email">
-            <input type="password" name="credentials[password]" placeholder="Password">
-            <input type="submit" name="submit" value="Sign in!">
+            <legend>Sign Out</legend>
+            <input type="submit" name="sign out" value="Sign Out">
           </fieldset>
-      </form>
+        </form>
 
-      <form id="sign-out">
-        <fieldset>
-          <legend>Sign Out!</legend>
-          <input type="submit" name="sign out" value="Sign Out">
-        </fieldset>
-      </form>
+        <form id="change-password">
+          <fieldset>
+            <legend>Change Password</legend>
+            <input type="password" name="passwords[old]" placeholder="Old Password">
+            <input type="password" name="passwords[new]" placeholder="New Password">
+            <input type="submit" name="submit" value="Change Password">
+          </fieldset>
+        </form>
 
-      <form id="change-password">
-        <fieldset>
-          <legend>Change Password</legend>
-          <input type="password" name="passwords[old]" placeholder="Old Password">
-          <input type="password" name="passwords[new]" placeholder="New Password">
-          <input type="submit" name="submit" value="Change Password">
-        </fieldset>
-    </form>
+        <form id="reset-game">
+            <fieldset>
+              <legend>New Game</legend>
+              <input type="submit" name="new game" value="New Game">
+            </fieldset>
+        </form>
+        </div>
+    </div>
     </body>
 </html>
