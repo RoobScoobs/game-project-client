@@ -37,10 +37,10 @@ const onChangePassword = function (event) {
   .fail(ui.failure);
 };
 
-const onNewGame = function (event) {
+const onCreateGame = function (event) {
   event.preventDefault();
-  api.newGame()
-  .done(ui.newGameSuccess)
+  api.createGame()
+  .done(ui.success)
   .fail(ui.failure);
 };
 
@@ -254,7 +254,7 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
-  $('#reset-game').on('submit', onNewGame);
+  $('#create-game').on('submit', onCreateGame);
   $('#box1').on('click', makeAMove);
   $('#box2').on('click', makeAMove2);
   $('#box3').on('click', makeAMove3);

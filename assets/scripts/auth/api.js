@@ -42,7 +42,7 @@ const changePassword = function (data) {
   });
 };
 
-const newGame = function () {
+const createGame = function () {
   return $.ajax ({
     url: app.host + '/games',
     method: 'POST',
@@ -57,5 +57,5 @@ module.exports = {
   signIn,
   signOut,
   changePassword,
-  newGame,
+  createGame,
 };
