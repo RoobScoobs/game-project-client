@@ -249,15 +249,6 @@ const makeAMove9 = function (event) {
     }
 };
 
-const tieGame = function () {
-  for (let i = 0, max = gameArray.length; i <= max; i++) {
-    if (gameArray[i] !== '') {
-      console.log("Tie!");
-    }
-  }
-};
-tieGame();
-
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);

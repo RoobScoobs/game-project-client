@@ -24,6 +24,10 @@ const signOutSuccess = function () {
   console.log(app);
 };
 
+const newGameSuccess = function () {
+  console.log('You created a new game!');
+};
+
 
 
 module.exports = {
@@ -31,5 +35,6 @@ module.exports = {
   success,
   signInSuccess,
   signOutSuccess,
-  changePasswordSuccess,
+  newGameSuccess,
+
 };
