@@ -24,8 +24,8 @@ const signOutSuccess = function () {
   console.log(app);
 };
 
-const createGameSuccess = function (data) {
-  app.user = data.user;
+const newGameSuccess = function (data) {
+  app.game = data.game;
   console.log(app);
 };
 
@@ -36,6 +36,5 @@ module.exports = {
   success,
   signInSuccess,
   signOutSuccess,
-  createGameSuccess,
-
+  newGameSuccess,
 };
