@@ -115,7 +115,7 @@ const makeAMove = function (event) {
     } else if (turnCount % 2 === 0) {
         // let index = $(this).data("id");
         $(this).text(player1);
-          move = player1;
+        move = player1;
         turnCount++;
         winGame();
     } else {
@@ -125,17 +125,19 @@ const makeAMove = function (event) {
         winGame();
     }
     console.log(move);
-    let id = event.target.id;
-    let value = move;
-    let index = function () {
-      return parseInt(id.slice(-1)) - 1;
-    };
-    api.updateGame(index, value)
-    .done(ui.success)
-    .fail(ui.failure);
 };
 
-
+const updateGame = function (event) {
+  event.preventDefault();
+  let id = event.target.id;
+  let value = $(this).text();
+  let index = function () {
+    return parseInt(id.slice(-1)) - 1;
+  };
+  api.updateGame(index, value)
+  .done(ui.success)
+  .fail(ui.failure);
+};
 
 // const makeAMove2 = function (event) {
 //     event.preventDefault();
@@ -290,6 +292,7 @@ const addHandlers = () => {
   $('#create-game').on('submit', onNewGame);
   $('#get-games').on('submit', onGetGames);
   $('.box').on('click', makeAMove);
+  $('.box').on('click', updateGame);
   // $('#box2').on('click', makeAMove2);
   // $('#box3').on('click', makeAMove3);
   // $('#box4').on('click', makeAMove4);
