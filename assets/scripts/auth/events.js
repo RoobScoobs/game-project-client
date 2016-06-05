@@ -5,19 +5,16 @@ const getFormFields = require('../../../lib/get-form-fields');
 const api = require('./api');
 const ui = require('./ui');
 
+
 let turnCount = 0;
-let move = '';
 let player1 = 'X';
 let player2 = 'O';
-let gameArray = ['', '', '', '', '', '', '', '', ''];
+let move = '';
+let gameArray = ['','','','','','','','',''];
 
-// const reset = function () {
-//   for (let i = 0, max = gameArray.length; i <= max; i++) {
-//     if (gameArray !== ) {
-//
-//     }
-//   }
-// };
+const reset = function () {
+
+};
 
 const endGame = function () {
 
@@ -59,7 +56,7 @@ const onNewGame = function (event) {
   api.createGame()
   .done(ui.newGameSuccess)
   .fail(ui.failure);
-  // reset();
+  reset();
 };
 
 const onGetGames = function (event) {
@@ -69,220 +66,84 @@ const onGetGames = function (event) {
   .fail(ui.failure);
 };
 
-const winGame = function () {
-    if (gameArray[0] === player1 && gameArray[1] === player1 && gameArray[2] === player1) {
-      console.log("Winner!");
-    } else if (gameArray[0] === player2 && gameArray[1] === player2 && gameArray[2] === player2) {
-      console.log("Winner!");
-    } else if (gameArray[3] === player1 && gameArray[4] === player1 && gameArray[5] === player1) {
-      console.log("Winner!");
-    } else if (gameArray[3] === player2 && gameArray[4] === player2 && gameArray[5] === player2) {
-      console.log("Winner!");
-    } else if (gameArray[6] === player1 && gameArray[7] === player1 && gameArray[8] === player1) {
-      console.log("Winner!");
-    } else if (gameArray[6] === player2 && gameArray[7] === player2 && gameArray[8] === player2) {
-      console.log("Winner!");
-    } else if (gameArray[0] === player1 && gameArray[3] === player1 && gameArray[6] === player1) {
-      console.log("Winner!");
-    } else if (gameArray[0] === player2 && gameArray[3] === player2 && gameArray[6] === player2) {
-      console.log("Winner!");
-    } else if (gameArray[1] === player1 && gameArray[4] === player1 && gameArray[7] === player1) {
-      console.log("Winner!");
-    } else if (gameArray[1] === player2 && gameArray[4] === player2 && gameArray[7] === player2) {
-      console.log("Winner!");
-    } else if (gameArray[2] === player1 && gameArray[5] === player1 && gameArray[8] === player1) {
-      console.log("Winner!");
-    } else if (gameArray[2] === player2 && gameArray[5] === player2 && gameArray[8] === player2) {
-      console.log("Winner!");
-    } else if (gameArray[0] === player1 && gameArray[4] === player1 && gameArray[8] === player1) {
-      console.log("Winner!");
-    } else if (gameArray[0] === player2 && gameArray[4] === player2 && gameArray[8] === player2) {
-      console.log("Winner!");
-    } else if (gameArray[2] === player1 && gameArray[4] === player1 && gameArray[6] === player1) {
-      console.log("Winner!");
-    } else if (gameArray[2] === player2 && gameArray[4] === player2 && gameArray[6] === player2) {
-      console.log("Winner!");
+const winOrTieGame = function () {
+    if (gameArray[0] && gameArray[1] && gameArray[2] move === player1) {
+      window.alert("X is the Winner!");
+    } else if (gameArray[0] && gameArray[1] && gameArray[2] === player2) {
+      window.alert("O is the Winner!");
+    } else if (gameArray[3] && gameArray[4] && gameArray[5] === player1) {
+      window.alert("X is the Winner!");
+    } else if (gameArray[3] && gameArray[4] && gameArray[5] === player2) {
+      window.alert("O is the Winner!");
+    } else if (gameArray[6] && gameArray[7] && gameArray[8] === player1) {
+      window.alert("X is the Winner!");
+    } else if (gameArray[6] && gameArray[7] && gameArray[8] === player2) {
+      window.alert("O is the Winner!");
+    } else if (gameArray[0] && gameArray[3] && gameArray[6] === player1) {
+      window.alert("X is the Winner!");
+    } else if (gameArray[0] && gameArray[3] && gameArray[6] === player2) {
+      window.alert("O is the Winner!");
+    } else if (gameArray[1] && gameArray[4] && gameArray[7] === player1) {
+      window.alert("X is the Winner!");
+    } else if (gameArray[1] && gameArray[4] && gameArray[7] === player2) {
+      window.alert("O is the Winner!");
+    } else if (gameArray[2] && gameArray[5] && gameArray[8] === player1) {
+      window.alert("X is the Winner!");
+    } else if (gameArray[2] && gameArray[5] && gameArray[8] === player2) {
+      window.alert("O is the Winner!");
+    } else if (gameArray[0] && gameArray[4] && gameArray[8] === player1) {
+      window.alert("X is the Winner!");
+    } else if (gameArray[0] && gameArray[4] && gameArray[8] === player2) {
+      window.alert("O is the Winner!");
+    } else if (gameArray[2] === player1 && gameArray[4] && gameArray[6] === player1) {
+      window.alert("X is the Winner!");
+    } else if (gameArray[2] === player2 && gameArray[4] && gameArray[6] === player2) {
+      window.alert("O is the Winner!");
+    } else if (turnCount >= 9) {
+      window.alert("It's a tie!");
     }
-    endGame();
  };
 
-
-
+gameArray.insert = function (index, move) {
+  this.splice(index, 0, move);
+};
 const makeAMove = function (event) {
     event.preventDefault();
+    let position = event.target.id;
+    let index = function () {
+      return parseInt(position.slice(-1)) - 1;
+    };
     if ($(this).text() !== ''){
-      console.log('Make a valid move');
+      window.alert('Make a valid move');
     } else if (turnCount % 2 === 0) {
         // let index = $(this).data("id");
         $(this).text(player1);
         move = player1;
         turnCount++;
-        winGame();
+        winOrTieGame();
     } else {
         $(this).text(player2);
         move = player2;
         turnCount++;
-        winGame();
+        winOrTieGame();
     }
-    console.log(move);
+    gameArray.insert(index, move);
+    console.log(gameArray);
 };
 
 const updateGame = function (event) {
   event.preventDefault();
   let id = event.target.id;
-  let value = $(this).text();
   let index = function () {
     return parseInt(id.slice(-1)) - 1;
   };
+  let value = $(this).text();
   api.updateGame(index, value)
   .done(ui.success)
   .fail(ui.failure);
 };
 
-// const makeAMove2 = function (event) {
-//     event.preventDefault();
-//     if ($(this).text() !== empty){
-//       console.log('Make a valid move');
-//     } else if (turnCount % 2 === 0) {
-//         $(this).text(player1);
-//         gameArray[1] = player1;
-//         console.log(gameArray);
-//         turnCount++;
-//         winGame();
-//     } else {
-//         $(this).text(player2);
-//         gameArray[1] = player2;
-//         console.log(gameArray);
-//         turnCount++;
-//         winGame();
-//     }
-// };
-// const makeAMove3 = function (event) {
-//     event.preventDefault();
-//     if ($(this).text() !== empty){
-//       console.log('Make a valid move');
-//     } else if (turnCount % 2 === 0) {
-//         $(this).text(player1);
-//         gameArray[2] = player1;
-//         console.log(gameArray);
-//         turnCount++;
-//         winGame();
-//     } else {
-//         $(this).text(player2);
-//         gameArray[2] = player2;
-//         console.log(gameArray);
-//         turnCount++;
-//         winGame();
-//     }
-// };
-// const makeAMove4 = function (event) {
-//     event.preventDefault();
-//     if ($(this).text() !== empty){
-//       console.log('Make a valid move');
-//     } else if (turnCount % 2 === 0) {
-//         $(this).text(player1);
-//         gameArray[3] = player1;
-//         console.log(gameArray);
-//         turnCount++;
-//         winGame();
-//     } else {
-//         $(this).text(player2);
-//         gameArray[3] = player2;
-//         console.log(gameArray);
-//         turnCount++;
-//         winGame();
-//     }
-// };
-// const makeAMove5 = function (event) {
-//     event.preventDefault();
-//     if ($(this).text() !== empty){
-//       console.log('Make a valid move');
-//     } else if (turnCount % 2 === 0) {
-//         $(this).text(player1);
-//         gameArray[4] = player1;
-//         console.log(gameArray);
-//         turnCount++;
-//         winGame();
-//     } else {
-//         $(this).text(player2);
-//         gameArray[4] = player2;
-//         console.log(gameArray);
-//         turnCount++;
-//         winGame();
-//     }
-// };
-// const makeAMove6 = function (event) {
-//     event.preventDefault();
-//     if ($(this).text() !== empty){
-//       console.log('Make a valid move');
-//     } else if (turnCount % 2 === 0) {
-//         $(this).text(player1);
-//         gameArray[5] = player1;
-//         console.log(gameArray);
-//         turnCount++;
-//         winGame();
-//     } else {
-//         $(this).text(player2);
-//         gameArray[5] = player2;
-//         console.log(gameArray);
-//         turnCount++;
-//         winGame();
-//     }
-// };
-// const makeAMove7 = function (event) {
-//     event.preventDefault();
-//     if ($(this).text() !== empty){
-//       console.log('Make a valid move');
-//     } else if (turnCount % 2 === 0) {
-//         $(this).text(player1);
-//         gameArray[6] = player1;
-//         console.log(gameArray);
-//         turnCount++;
-//         winGame();
-//     } else {
-//         $(this).text(player2);
-//         gameArray[6] = player2;
-//         console.log(gameArray);
-//         turnCount++;
-//         winGame();
-//     }
-// };
-// const makeAMove8 = function (event) {
-//     event.preventDefault();
-//     if ($(this).text() !== empty){
-//       console.log('Make a valid move');
-//     } else if (turnCount % 2 === 0) {
-//         $(this).text(player1);
-//         gameArray[7] = player1;
-//         console.log(gameArray);
-//         turnCount++;
-//         winGame();
-//     } else {
-//         $(this).text(player2);
-//         gameArray[7] = player2;
-//         console.log(gameArray);
-//         turnCount++;
-//         winGame();
-//     }
-// };
-// const makeAMove9 = function (event) {
-//     event.preventDefault();
-//     if ($(this).text() !== empty){
-//       console.log('Make a valid move');
-//     } else if (turnCount % 2 === 0) {
-//         $(this).text(player1);
-//         gameArray[8] = player1;
-//         console.log(gameArray);
-//         turnCount++;
-//         winGame();
-//     } else {
-//         $(this).text(player2);
-//         gameArray[8] = player2;
-//         console.log(gameArray);
-//         turnCount++;
-//         winGame();
-//     }
-// };
+
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
@@ -293,14 +154,6 @@ const addHandlers = () => {
   $('#get-games').on('submit', onGetGames);
   $('.box').on('click', makeAMove);
   $('.box').on('click', updateGame);
-  // $('#box2').on('click', makeAMove2);
-  // $('#box3').on('click', makeAMove3);
-  // $('#box4').on('click', makeAMove4);
-  // $('#box5').on('click', makeAMove5);
-  // $('#box6').on('click', makeAMove6);
-  // $('#box7').on('click', makeAMove7);
-  // $('#box8').on('click', makeAMove8);
-  // $('#box9').on('click', makeAMove9);
 };
 
 module.exports = {

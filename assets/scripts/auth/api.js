@@ -55,7 +55,7 @@ const createGame = function () {
 
 const getGames = function () {
   return $.ajax ({
-    url: app.host + '/games/' + game.id,
+    url: app.host + '/games/' + app.game.id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,
