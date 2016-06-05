@@ -13,12 +13,12 @@ let move = '';
 let gameArray = ['','','','','','','','',''];
 
 const reset = function () {
-
+  
 };
-
-const endGame = function () {
-
-};
+//
+// const endGame = function () {
+//
+// };
 
 const onSignUp = function (event) {
   event.preventDefault();
@@ -66,43 +66,43 @@ const onGetGames = function (event) {
   .fail(ui.failure);
 };
 
-const winOrTieGame = function () {
-    if (gameArray[0] && gameArray[1] && gameArray[2] move === player1) {
-      window.alert("X is the Winner!");
-    } else if (gameArray[0] && gameArray[1] && gameArray[2] === player2) {
-      window.alert("O is the Winner!");
-    } else if (gameArray[3] && gameArray[4] && gameArray[5] === player1) {
-      window.alert("X is the Winner!");
-    } else if (gameArray[3] && gameArray[4] && gameArray[5] === player2) {
-      window.alert("O is the Winner!");
-    } else if (gameArray[6] && gameArray[7] && gameArray[8] === player1) {
-      window.alert("X is the Winner!");
-    } else if (gameArray[6] && gameArray[7] && gameArray[8] === player2) {
-      window.alert("O is the Winner!");
-    } else if (gameArray[0] && gameArray[3] && gameArray[6] === player1) {
-      window.alert("X is the Winner!");
-    } else if (gameArray[0] && gameArray[3] && gameArray[6] === player2) {
-      window.alert("O is the Winner!");
-    } else if (gameArray[1] && gameArray[4] && gameArray[7] === player1) {
-      window.alert("X is the Winner!");
-    } else if (gameArray[1] && gameArray[4] && gameArray[7] === player2) {
-      window.alert("O is the Winner!");
-    } else if (gameArray[2] && gameArray[5] && gameArray[8] === player1) {
-      window.alert("X is the Winner!");
-    } else if (gameArray[2] && gameArray[5] && gameArray[8] === player2) {
-      window.alert("O is the Winner!");
-    } else if (gameArray[0] && gameArray[4] && gameArray[8] === player1) {
-      window.alert("X is the Winner!");
-    } else if (gameArray[0] && gameArray[4] && gameArray[8] === player2) {
-      window.alert("O is the Winner!");
-    } else if (gameArray[2] === player1 && gameArray[4] && gameArray[6] === player1) {
-      window.alert("X is the Winner!");
-    } else if (gameArray[2] === player2 && gameArray[4] && gameArray[6] === player2) {
-      window.alert("O is the Winner!");
-    } else if (turnCount >= 9) {
-      window.alert("It's a tie!");
-    }
- };
+// const winOrTieGame = function () {
+//     if (gameArray[0] && gameArray[1] && gameArray[2] move === player1) {
+//       window.alert("X is the Winner!");
+//     } else if (gameArray[0] && gameArray[1] && gameArray[2] === player2) {
+//       window.alert("O is the Winner!");
+//     } else if (gameArray[3] && gameArray[4] && gameArray[5] === player1) {
+//       window.alert("X is the Winner!");
+//     } else if (gameArray[3] && gameArray[4] && gameArray[5] === player2) {
+//       window.alert("O is the Winner!");
+//     } else if (gameArray[6] && gameArray[7] && gameArray[8] === player1) {
+//       window.alert("X is the Winner!");
+//     } else if (gameArray[6] && gameArray[7] && gameArray[8] === player2) {
+//       window.alert("O is the Winner!");
+//     } else if (gameArray[0] && gameArray[3] && gameArray[6] === player1) {
+//       window.alert("X is the Winner!");
+//     } else if (gameArray[0] && gameArray[3] && gameArray[6] === player2) {
+//       window.alert("O is the Winner!");
+//     } else if (gameArray[1] && gameArray[4] && gameArray[7] === player1) {
+//       window.alert("X is the Winner!");
+//     } else if (gameArray[1] && gameArray[4] && gameArray[7] === player2) {
+//       window.alert("O is the Winner!");
+//     } else if (gameArray[2] && gameArray[5] && gameArray[8] === player1) {
+//       window.alert("X is the Winner!");
+//     } else if (gameArray[2] && gameArray[5] && gameArray[8] === player2) {
+//       window.alert("O is the Winner!");
+//     } else if (gameArray[0] && gameArray[4] && gameArray[8] === player1) {
+//       window.alert("X is the Winner!");
+//     } else if (gameArray[0] && gameArray[4] && gameArray[8] === player2) {
+//       window.alert("O is the Winner!");
+//     } else if (gameArray[2] === player1 && gameArray[4] && gameArray[6] === player1) {
+//       window.alert("X is the Winner!");
+//     } else if (gameArray[2] === player2 && gameArray[4] && gameArray[6] === player2) {
+//       window.alert("O is the Winner!");
+//     } else if (turnCount >= 9) {
+//       window.alert("It's a tie!");
+//     }
+//  };
 
 gameArray.insert = function (index, move) {
   this.splice(index, 0, move);

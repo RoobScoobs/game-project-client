@@ -40,7 +40,31 @@ div.content-secondary {
   @include make-sm-column(3);
   @include make-xs-column(3);
 }
-
 h1 {
   font-size: $font-size;
+}
+
+button.main-button {
+  background-color: $white;
+  border: none;
+}
+
+button.main-button:hover {
+  background-color: $gray;
+}
+
+button.secondary-button {
+  background-color: $black;
+  color: $white;
+  border: none;
+}
+
+button.secondary-button:hover {
+  background-color: $lighter-black;
+  color: $white;
+  border: none;
+}
+
+span.button-title {
+  color: $black;
 }

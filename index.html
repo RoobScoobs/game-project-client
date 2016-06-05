@@ -27,51 +27,119 @@
         </div>
         <div class="content-secondary">
           <h1>ooTICxxTACxxTOEoo</h1>
-          <form id="sign-up">
-            <fieldset>
-              <legend>Register</legend>
-              <input type="text" name="credentials[email]" placeholder="Email">
-              <input type="password" name="credentials[password]" placeholder="Password">
-              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-              <input type="submit" name="submit" value="Register">
-            </fieldset>
-          </form>
+            <button type="button" class="btn btn-primary btn-md main-button" data-toggle="modal" data-target="#myModal">
+                <span class="button-title">Login</span>
+            </button>
 
-          <form id="sign-in">
-            <fieldset>
-              <legend>Sign In</legend>
-              <input type="text" name="credentials[email]" placeholder="Email">
-              <input type="password" name="credentials[password]" placeholder="Password">
-              <input type="submit" name="submit" value="Sign In">
-            </fieldset>
-        </form>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Welcome Back!</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <fieldset>
+                        <input type="text" name="credentials[email]" placeholder="Email">
+                        <input type="password" name="credentials[password]" placeholder="Password">
+                      </fieldset>
+                  </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" id="sign-in" class="btn btn-primary secondary-button">Login</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        <form id="sign-out">
-          <fieldset>
-            <legend>Sign Out</legend>
-            <input type="submit" name="sign out" value="Sign Out">
-          </fieldset>
-        </form>
+            <button type="button" class="btn btn-primary btn-md main-button" data-toggle="modal" data-target="#myModal2">
+              <span class="button-title">Register</span>
+            </button>
 
-        <form id="change-password">
-          <fieldset>
-            <legend>Change Password</legend>
-            <input type="password" name="passwords[old]" placeholder="Old Password">
-            <input type="password" name="passwords[new]" placeholder="New Password">
-            <input type="submit" name="submit" value="Change Password">
-          </fieldset>
-        </form>
+            <!-- Second Modal -->
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel2">Welcome!</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <fieldset>
+                        <input type="text" name="credentials[email]" placeholder="Email">
+                        <input type="password" name="credentials[password]" placeholder="Password">
+                        <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                      </fieldset>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" id="sign-up" class="btn btn-primary secondary-button">Register</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            <button type="button" class="btn btn-primary btn-md main-button" data-toggle="modal" data-target="#myModal3">
+              <span class="button-title">Options<span>
+            </button>
+
+            <!-- Third Modal -->
+            <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel3">User Options</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                       <div class="col-md-12">
+                         <form id="get-games">
+                             <fieldset>
+                               <input type="submit" name="new game" value="Display Games">
+                             </fieldset>
+                         </form>
+                       </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-md-12">
+                      <form id="change-password">
+                        <fieldset>
+                          <legend>Change Password</legend>
+                          <input type="password" name="passwords[old]" placeholder="Old Password">
+                          <input type="password" name="passwords[new]" placeholder="New Password">
+                          <input type="submit" name="submit" value="Change Password">
+                        </fieldset>
+                      </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <div class="row">
+                      <div class="col-md-2">
+                      <form id="sign-out">
+                        <fieldset>
+                          <input type="submit" name="sign out" value="Sign Out">
+                        </fieldset>
+                      </form>
+                      </div>
+                      <div class="col-md-10">
+                        <button type="button" class="btn btn-default secondary-button" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
         <form id="create-game">
             <fieldset>
               <legend>Create Game</legend>
               <input type="submit" name="new game" value="Create Game">
-            </fieldset>
-        </form>
-        <form id="get-games">
-            <fieldset>
-              <legend>Get Games</legend>
-              <input type="submit" name="new game" value="Get Games">
             </fieldset>
         </form>
         </div>
