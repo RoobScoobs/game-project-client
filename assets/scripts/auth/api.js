@@ -49,9 +49,9 @@ const createGame = function () {
   });
 };
 
-const getGames = function () {
+const getGames = function (data) {
   return $.ajax ({
-    url: app.host + '/games/' + app.game.id,
+    url: app.host + '/games/',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,

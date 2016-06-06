@@ -50,6 +50,7 @@ const reset = function () {
   turnCount = 0;
   gameArray = ['','', '', '', '', '', '', '', ''];
   $('.box').empty();
+  $('.box').on('click');
 };
 
 const endGame = function () {
@@ -105,6 +106,7 @@ const winOrTieGame = function () {
     }
     if (win) {
       $('h2').text('Player ' + winner + ' is the winner!');
+      $('.box').off('click');
       gameOver = true;
       if (winner === player1) {
         user1 += 1;
@@ -115,15 +117,16 @@ const winOrTieGame = function () {
       $('.score.2').text('Player 2: ' + user2);
     } else if (tie) {
       $('h2').text('Game is a tie!');
-      gameOver = true; 
+      gameOver = true;
     }
 
 };
 
 const onGetGames = function (event) {
   event.preventDefault();
-  api.getGames()
-  .done(ui.success)
+  let data = getFormFields(this);
+  api.getGames(data)
+  .done(ui.getGameSuccess)
   .fail(ui.failure);
 };
 

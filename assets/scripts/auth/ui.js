@@ -32,7 +32,10 @@ const newGameSuccess = function (data) {
   console.log(app);
 };
 
-
+const getGameSuccess = function (data) {
+  $('.row.games').text(data.games.length);
+  console.log(data);
+};
 
 module.exports = {
   failure,
@@ -40,4 +43,5 @@ module.exports = {
   signInSuccess,
   signOutSuccess,
   newGameSuccess,
+  getGameSuccess,
 };
