@@ -9,30 +9,39 @@
     <body>
       <div class="wrapper clearfix">
         <div class="content-main">
+          <h2></h2>
           <div class="row">
-            <div class="box 1" id="box1"></div>
-            <div class="box 2" id="box2"></div>
-            <div class="box 3" id="box3"></div>
+            <div class="box 1" id="0"></div>
+            <div class="box 2" id="1"></div>
+            <div class="box 3" id="2"></div>
           </div>
           <div class="row">
-            <div class="box 4" id="box4"></div>
-            <div class="box 5" id="box5"></div>
-            <div class="box 6" id="box6"></div>
+            <div class="box 4" id="3"></div>
+            <div class="box 5" id="4"></div>
+            <div class="box 6" id="5"></div>
           </div>
           <div class="row">
-            <div class="box 7" id="box7"></div>
-            <div class="box 8" id="box8"></div>
-            <div class="box 9" id="box9"></div>
+            <div class="box 7" id="6"></div>
+            <div class="box 8" id="7"></div>
+            <div class="box 9" id="8"></div>
+          </div>
+          <div class="row users">
+              <div class="score 1">
+                <p>Player 1: </p>
+              </div>
+              <div class="score 2">
+                <p>Player 2: </p>
+              </div>
           </div>
         </div>
         <div class="content-secondary">
-          <h1>ooTICxxTACxxTOEoo</h1>
+          <h1>TIC<br>TAC<br>TOE</h1>
           <form id="sign-up">
             <fieldset>
               <legend>Register</legend>
-              <input type="text" name="credentials[email]" placeholder="Email">
-              <input type="password" name="credentials[password]" placeholder="Password">
-              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              <input type="text" name="credentials[email]" placeholder="Email" class="clear">
+              <input type="password" name="credentials[password]" placeholder="Password" class="clear">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" class="clear">
               <input type="submit" name="submit" value="Register">
             </fieldset>
           </form>
@@ -40,8 +49,8 @@
           <form id="sign-in">
             <fieldset>
               <legend>Sign In</legend>
-              <input type="text" name="credentials[email]" placeholder="Email">
-              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="text" name="credentials[email]" placeholder="Email" class="clear">
+              <input type="password" name="credentials[password]" placeholder="Password" class="clear">
               <input type="submit" name="submit" value="Sign In">
             </fieldset>
         </form>
@@ -56,8 +65,8 @@
         <form id="change-password">
           <fieldset>
             <legend>Change Password</legend>
-            <input type="password" name="passwords[old]" placeholder="Old Password">
-            <input type="password" name="passwords[new]" placeholder="New Password">
+            <input type="password" name="passwords[old]" placeholder="Old Password" class="clear">
+            <input type="password" name="passwords[new]" placeholder="New Password" class="clear">
             <input type="submit" name="submit" value="Change Password">
           </fieldset>
         </form>

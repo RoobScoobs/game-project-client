@@ -6,19 +6,15 @@ const signUp = (data) => {
   return $.ajax ({
     url: app.host + '/sign-up',
     method: 'POST',
-    data: data
+    data
   });
 };
 
 const signIn = (data) => {
-  console.log("data is ");
-  console.log(data);
   return $.ajax ({
     url: app.host + '/sign-in',
     method: 'POST',
     data
-    // same as writing
-    // data: data
   });
 };
 
@@ -63,7 +59,7 @@ const getGames = function () {
   });
 };
 
-const updateGame = function (index, value, over) {
+const updateGame = function (index, value, gameOver) {
   return $.ajax ({
     url: app.host + '/games/' + app.game.id,
     method: 'PATCH',
@@ -76,7 +72,7 @@ const updateGame = function (index, value, over) {
             "index": index,
             "value": value,
           },
-          "over": over
+          "over": gameOver
           }
         }
     });

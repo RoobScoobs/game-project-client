@@ -4,18 +4,21 @@ const app = require('../app.js');
 
 const success = (data) => {
   if(data) {
+    $('#sign-up').children('fieldset').children('.clear').val('');
     console.log(data);
   } else {
+  $('#change-password').children('fieldset').children('.clear').val('');
   console.log('Changed Password Successfully!');
 }
 };
 
 const failure = (error) => {
-  console.error(error);
+  console.log(error);
 };
 
 const signInSuccess = function (data) {
   app.user = data.user;
+  $('#sign-in').children('fieldset').children('.clear').val('');
   console.log(app);
 };
 
