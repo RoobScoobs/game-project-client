@@ -1,5 +1,3 @@
-(http://sosinskyldz.prv.pl/assets/img/4.jpg)
-
 # TIC-TAC-TOE
 
 ## Introduction
