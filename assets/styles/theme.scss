@@ -34,7 +34,16 @@ div.row {
     height: 16.666vw;
   }
 }
-
+div.row.numOfGames {
+  @include make-row();
+  h3 {
+    text-align: $text-align;
+    @include make-lg-column(12);
+    @include make-md-column(12);
+    @include make-sm-column(12);
+    @include make-xs-column(12);
+  }
+}
 div.row.users {
   @include make-row();
   div.score {

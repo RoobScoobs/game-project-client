@@ -1,9 +1,10 @@
+(http://sosinskyldz.prv.pl/assets/img/4.jpg)
 
 # TIC-TAC-TOE
 
 ## Introduction
 
-Github page:
+Github page: http://roobscoobs.github.io/game-project-client
 
 ## Technologies Used
 
@@ -56,7 +57,7 @@ put in the effort.
 - Display a table with a user's game history and statistics
 - Prompt to show successful login, registration, etc
 - Develop modular code, better separation of files
-- Sign-in and return to game progress 
+- Sign-in and return to game progress
 
 ### WireFrames & User Stories
 
