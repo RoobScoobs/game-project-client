@@ -34,6 +34,7 @@ div.row {
     height: 16.666vw;
   }
 }
+
 div.row.numOfGames {
   @include make-row();
   h3 {
@@ -44,6 +45,7 @@ div.row.numOfGames {
     @include make-xs-column(12);
   }
 }
+
 div.row.users {
   @include make-row();
   div.score {
@@ -52,6 +54,11 @@ div.row.users {
     @include make-sm-column(6);
     @include make-xs-column(6);
   }
+}
+
+div.box:hover {
+  color:rgba(211,211,211, 0.3);
+  cursor: pointer;
 }
 
 div.content-secondary {
