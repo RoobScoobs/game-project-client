@@ -47,10 +47,12 @@ const onChangePassword = function (event) {
 };
 
 const reset = function () {
+  $('.box').off('click');
   turnCount = 0;
   gameArray = ['','', '', '', '', '', '', '', ''];
   $('.box').empty();
-  $('.box').on('click');
+  $('.box').on('click', makeAMove);
+  $('.box').on('click', updateGame);
 };
 
 const endGame = function () {
@@ -117,6 +119,7 @@ const winOrTieGame = function () {
       $('.score.2').text('Player 2: ' + user2);
     } else if (tie) {
       $('h2').text('Game is a tie!');
+      $('.box').off('click');
       gameOver = true;
     }
 
