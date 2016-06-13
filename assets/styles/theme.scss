@@ -56,10 +56,6 @@ div.row.users {
   }
 }
 
-div.box:hover {
-  color:rgba(211,211,211, 0.3);
-  cursor: pointer;
-}
 
 div.content-secondary {
   @include make-lg-column(3);
