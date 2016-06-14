@@ -398,36 +398,30 @@ webpackJsonp([0],[
 	var success = function success(data) {
 	  if (data) {
 	    $('#sign-up').children('fieldset').children('.clear').val('');
-	    console.log(data);
 	  } else {
 	    $('#change-password').children('fieldset').children('.clear').val('');
-	    console.log('Changed Password Successfully!');
 	  }
 	};
 
 	var failure = function failure(error) {
-	  console.log(error);
+	  // console.log(error);
 	};
 
 	var signInSuccess = function signInSuccess(data) {
 	  app.user = data.user;
 	  $('#sign-in').children('fieldset').children('.clear').val('');
-	  console.log(app);
 	};
 
 	var signOutSuccess = function signOutSuccess() {
 	  app.user = null;
-	  console.log(app);
 	};
 
 	var newGameSuccess = function newGameSuccess(data) {
 	  app.game = data.game;
-	  console.log(app);
 	};
 
 	var getGameSuccess = function getGameSuccess(data) {
 	  $('.row.games').text(data.games.length);
-	  console.log(data);
 	};
 
 	module.exports = {
