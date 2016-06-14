@@ -82,10 +82,12 @@ webpackJsonp([0],[
 	};
 
 	var reset = function reset() {
+	  $('.box').off('click');
 	  turnCount = 0;
 	  gameArray = ['', '', '', '', '', '', '', '', ''];
 	  $('.box').empty();
-	  $('.box').on('click');
+	  $('.box').on('click', makeAMove);
+	  $('.box').on('click', updateGame);
 	};
 
 	var endGame = function endGame() {
@@ -152,6 +154,7 @@ webpackJsonp([0],[
 	    $('.score.2').text('Player 2: ' + user2);
 	  } else if (tie) {
 	    $('h2').text('Game is a tie!');
+	    $('.box').off('click');
 	    gameOver = true;
 	  }
 	};
